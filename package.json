@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "file-read": "node src/2/tool-file-read.mjs",
-    "node-exec": "node src/3/node-exec.mjs"
+    "node-exec": "node src/3/node-exec.mjs",
+    "mini-cursor": "node src/3/mini-cursor.mjs"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@langchain/core": "^1.1.19",
     "@langchain/openai": "^1.2.5",
+    "chalk": "^5.6.2",
     "dotenv": "^17.2.4",
     "zod": "^4.3.6"
   }

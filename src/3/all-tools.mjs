@@ -67,7 +67,7 @@ const executeCommandTool = tool(
       }`
     );
 
-    returnnewPromise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       // 解析命令和参数
       const [cmd, ...args] = command.split(" ");
 

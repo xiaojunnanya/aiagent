@@ -64,3 +64,5 @@ cache/
 .yalc
 yalc.lock
 stats.html
+
+/react-todo-app
