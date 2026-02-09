@@ -34,6 +34,8 @@ const writeFileTool = tool(
   async ({ filePath, content }) => {
     try {
       const dir = path.dirname(filePath);
+      // 确保这个目录存在，不存在就创建（连父目录一起）。
+      // recursive 表示如果父目录不存在也一并创建，这样就不需要担心多层目录了。
       await fs.mkdir(dir, { recursive: true });
       await fs.writeFile(filePath, content, "utf-8");
       console.log(
