@@ -8,7 +8,8 @@
     "file-read": "node src/2/tool-file-read.mjs",
     "node-exec": "node src/3/node-exec.mjs",
     "mini-cursor": "node src/3/mini-cursor.mjs",
-    "langchain-mcp-test": "node src/4/langchain-mcp-test.mjs"
+    "langchain-mcp-test": "node src/4/langchain-mcp-test.mjs",
+    "mcp-test":"node src/5/mcp-test.mjs"
   },
   "author": "",
   "license": "ISC",
