@@ -25,13 +25,17 @@ const mcpClient = new MultiServerMCPClient({
     "amap-maps-streamableHTTP": {
       url: "https://mcp.amap.com/mcp?key=" + process.env.AMAP_MAPS_API_KEY,
     },
-    "filesystem": {
+    filesystem: {
       command: "npx",
       args: [
         "-y",
         "@modelcontextprotocol/server-filesystem",
         "/Users/mac/jiuci/github/aiagent",
       ],
+    },
+    "chrome-devtools": {
+      command: "npx",
+      args: ["-y", "chrome-devtools-mcp@latest"],
     },
   },
 });
@@ -67,24 +71,21 @@ async function runAgentWithTools(query, maxIterations = 30) {
       if (foundTool) {
         const toolResult = await foundTool.invoke(toolCall.args);
 
+        // LangChain 要求 content 必须是 string，对象会导致 message.content.map is not a function
         let contentStr;
         if (typeof toolResult === "string") {
           contentStr = toolResult;
-        } else if (toolResult && toolResult.text) {
-          // 如果返回对象有 text 字段，优先使用
+        } else if (toolResult && typeof toolResult.text === "string") {
           contentStr = toolResult.text;
+        } else if (toolResult !== null && toolResult !== undefined) {
+          contentStr = JSON.stringify(toolResult);
+        } else {
+          contentStr = "";
         }
 
         messages.push(
           new ToolMessage({
             content: contentStr,
-            tool_call_id: toolCall.id,
-          })
-        );
-
-        messages.push(
-          new ToolMessage({
-            content: toolResult,
             tool_call_id: toolCall.id,
           })
         );
@@ -95,8 +96,6 @@ async function runAgentWithTools(query, maxIterations = 30) {
   return messages[messages.length - 1].content;
 }
 
-await runAgentWithTools(
-  "北京南站附近的5个酒店，以及去的路线，路线规划生成文档保存到 /Users/mac/jiuci/github/aiagent/src/5 的一个 md 文件"
-);
+await runAgentWithTools("北京南站附近的酒店，最近的 3 个酒店，拿到酒店图片，打开浏览器，展示每个酒店的图片，每个 tab 一个 url 展示，并且在把那个页面标题改为酒店名");
 
 await mcpClient.close();
