@@ -11,7 +11,12 @@
     "langchain-mcp-test": "node src/4/langchain-mcp-test.mjs",
     "mcp-test": "node src/5/mcp-test.mjs",
     "hello-rag": "node src/6/hello-rag.mjs",
-    "loader-and-splitter": "node src/7/loader-and-splitter.mjs"
+    "loader-and-splitter": "node src/7/loader-and-splitter.mjs",
+    "tiktoken-test": "node src/8/tiktoken-test.mjs",
+    "CharacterTextSplitter-test": "node src/8/CharacterTextSplitter-test.mjs",
+    "RecursiveCharacterTextSplitter-test": "node src/8/RecursiveCharacterTextSplitter-test.mjs",
+    "TokenTextSplitter-test": "node src/8/TokenTextSplitter-test.mjs",
+    "recursive-splitter-markdown": "node src/8/recursive-splitter-markdown.mjs"
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +31,7 @@
     "chalk": "^5.6.2",
     "cheerio": "^1.2.0",
     "dotenv": "^17.2.4",
+    "js-tiktoken": "^1.0.21",
     "zod": "^4.3.6"
   }
 }

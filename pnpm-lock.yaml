@@ -38,6 +38,9 @@ importers:
       dotenv:
         specifier: ^17.2.4
         version: 17.2.4
+      js-tiktoken:
+        specifier: ^1.0.21
+        version: 1.0.21
       zod:
         specifier: ^4.3.6
         version: 4.3.6
