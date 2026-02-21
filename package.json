@@ -10,17 +10,21 @@
     "mini-cursor": "node src/3/mini-cursor.mjs",
     "langchain-mcp-test": "node src/4/langchain-mcp-test.mjs",
     "mcp-test": "node src/5/mcp-test.mjs",
-    "hello-rag": "node src/6/hello-rag.mjs"
+    "hello-rag": "node src/6/hello-rag.mjs",
+    "loader-and-splitter": "node src/7/loader-and-splitter.mjs"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@langchain/classic": "^1.0.18",
+    "@langchain/community": "^1.1.15",
     "@langchain/core": "^1.1.19",
     "@langchain/mcp-adapters": "^1.1.2",
     "@langchain/openai": "^1.2.5",
+    "@langchain/textsplitters": "^1.0.1",
     "@modelcontextprotocol/sdk": "^1.26.0",
     "chalk": "^5.6.2",
+    "cheerio": "^1.2.0",
     "dotenv": "^17.2.4",
     "zod": "^4.3.6"
   }
