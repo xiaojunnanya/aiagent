@@ -26,20 +26,35 @@ const server = new McpServer({
   version: "1.0.0",
 });
 
-// 注册工具：查询用户信息
+// 注册Tool，类似于函数，可以被 MCP Client 调用
 server.registerTool(
-  "query_user",
+  "query_user", // Tool name
   {
     description:
       "查询数据库中的用户信息。输入用户 ID，返回该用户的详细信息（姓名、邮箱、角色）。",
+    // Tool input schema
     inputSchema: {
       userId: z.string().describe("用户 ID，例如: 001, 002, 003"),
     },
   },
+  // Tool 实现函数
+  // 当 ai 调用工具时，会执行这个函数，把参数传进来，结果返回给 AI
   async ({ userId }) => {
     const user = database.users[userId];
 
     if (!user) {
+      // 注意返回内容格式：
+      // {
+      //   content: [
+      //     {
+      //       type: "text",
+      //       text: "用户信息",
+      //     },
+      //   ],
+      // }
+      // 这是 MCP 标准格式。
+
+
       return {
         content: [
           {
@@ -58,13 +73,13 @@ server.registerTool(
         },
       ],
     };
-  },
+  }
 );
 
-// 注册资源：使用指南
+// 注册 Resource（资源），类似于文件，可以被 MCP Client 读取
 server.registerResource(
-  "使用指南",
-  "docs://guide",
+  "使用指南", // Resource name
+  "docs://guide", // Resource uri
   {
     description: "MCP Server 使用文档",
     mimeType: "text/plain",
@@ -83,8 +98,9 @@ server.registerResource(
         },
       ],
     };
-  },
+  }
 );
 
+// 启动 MCP Server，并通过 stdio 等待 Client 连接
 const transport = new StdioServerTransport();
 await server.connect(transport);

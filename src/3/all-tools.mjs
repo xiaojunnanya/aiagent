@@ -10,12 +10,12 @@ const readFileTool = tool(
     try {
       const content = await fs.readFile(filePath, "utf-8");
       console.log(
-        `  [工具调用] read_file("${filePath}") - 成功读取 ${content.length} 字节`
+        `[工具调用] read_file("${filePath}") - 成功读取 ${content.length} 字节`
       );
       return `文件内容:\n${content}`;
     } catch (error) {
       console.log(
-        `  [工具调用] read_file("${filePath}") - 错误: ${error.message}`
+        `[工具调用] read_file("${filePath}") - 错误: ${error.message}`
       );
       return `读取文件失败: ${error.message}`;
     }
@@ -39,12 +39,12 @@ const writeFileTool = tool(
       await fs.mkdir(dir, { recursive: true });
       await fs.writeFile(filePath, content, "utf-8");
       console.log(
-        `  [工具调用] write_file("${filePath}") - 成功写入 ${content.length} 字节`
+        `[工具调用] write_file("${filePath}") - 成功写入 ${content.length} 字节`
       );
       return `文件写入成功: ${filePath}`;
     } catch (error) {
       console.log(
-        `  [工具调用] write_file("${filePath}") - 错误: ${error.message}`
+        `[工具调用] write_file("${filePath}") - 错误: ${error.message}`
       );
       return `写入文件失败: ${error.message}`;
     }
@@ -60,11 +60,12 @@ const writeFileTool = tool(
 );
 
 // 3. 执行命令工具（带实时输出）
+// 传入举例：{ "command": "pnpm install", "workingDirectory": "./my-project" }
 const executeCommandTool = tool(
   async ({ command, workingDirectory }) => {
-    const cwd = workingDirectory || process.cwd();
+    const cwd = workingDirectory || process.cwd(); // 工作目录，如果没传就使用当前工作目录
     console.log(
-      `  [工具调用] execute_command("${command}")${
+      `[工具调用] execute_command("${command}")${
         workingDirectory ? ` - 工作目录: ${workingDirectory}` : ""
       }`
     );
@@ -86,8 +87,10 @@ const executeCommandTool = tool(
       });
 
       child.on("close", (code) => {
+        // 0 是成功
         if (code === 0) {
-          console.log(`  [工具调用] execute_command("${command}") - 执行成功`);
+          console.log(`[工具调用] execute_command("${command}") - 执行成功`);
+          // 重要提示设计：因为 LLM 容易 cd ,但每次 tool 调用都是独立的进程，所以 cd 不会持久生效。
           const cwdInfo = workingDirectory
             ? `\n\n重要提示：命令在目录 "${workingDirectory}" 中执行成功。如果需要在这个项目目录中继续执行命令，请使用 workingDirectory: "${workingDirectory}" 参数，不要使用 cd 命令。`
             : "";
@@ -96,6 +99,8 @@ const executeCommandTool = tool(
           console.log(
             `  [工具调用] execute_command("${command}") - 执行失败，退出码: ${code}`
           );
+          // 失败分支，没有reject，因为在 Agent 体系里，工具执行失败不是程序错误，而是“模型可以根据错误继续推理”
+          // 所以如果 reject，整个 Agent 会崩
           resolve(
             `命令执行失败，退出码: ${code}${
               errorMsg ? "\n错误: " + errorMsg : ""
@@ -110,6 +115,7 @@ const executeCommandTool = tool(
     description: "执行系统命令，支持指定工作目录，实时显示输出",
     schema: z.object({
       command: z.string().describe("要执行的命令"),
+      // optional代表可选参数，推荐指定
       workingDirectory: z.string().optional().describe("工作目录（推荐指定）"),
     }),
   }

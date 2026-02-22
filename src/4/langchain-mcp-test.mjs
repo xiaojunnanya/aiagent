@@ -16,22 +16,23 @@ const model = new ChatOpenAI({
   },
 });
 
-/** ---------- MCP CLIENT ---------- */
 const mcpClient = new MultiServerMCPClient({
   mcpServers: {
     "my-mcp-server": {
       command: "node",
-      args: ["C:\\X\\program\\study\\ai\\src\\4\\my-mcp-server.mjs"],
+      args: ["/Users/mac/jiuci/github/aiagent/src/4/my-mcp-server.mjs"],
     },
   },
 });
 
-/** ---------- LOAD TOOLS ---------- */
+
 const tools = await mcpClient.getTools();
 const modelWithTools = model.bindTools(tools);
 
-/** ---------- 读取 MCP Resource 并注入上下文 ---------- */
+// 读取 MCP Resource 并注入上下文
 async function loadResourceContext() {
+  // 获取所有 MCP Server 的资源列表
+  // 返回一个对象，key 是 server name，value 是资源列表
   const res = await mcpClient.listResources();
 
   let resourceContent = "";
@@ -44,10 +45,16 @@ async function loadResourceContext() {
       resourceContent += content[0].text + "\n";
     }
   }
+
+  // 拼接成字符串，注入到 SystemMessage 中作为 AI 的背景知识
+  // 这样模型就能理解服务器提供了哪些功能和文档。
   return resourceContent;
 }
 
-/** ---------- AGENT LOOP ---------- */
+// Agent 执行函数
+// query: 用户查询
+// resourceContext: 资源上下文
+// maxIterations: 最大迭代次数
 async function runAgentWithTools(query, resourceContext, maxIterations = 30) {
   const messages = [
     new SystemMessage(resourceContext), // 注入 resource 作为上下文
@@ -68,6 +75,7 @@ async function runAgentWithTools(query, resourceContext, maxIterations = 30) {
     console.log(
       chalk.bgBlue(`🔍 检测到 ${response.tool_calls.length} 个工具调用`)
     );
+    
     console.log(
       chalk.bgBlue(
         `🔍 工具调用: ${response.tool_calls.map((t) => t.name).join(", ")}`
@@ -91,7 +99,6 @@ async function runAgentWithTools(query, resourceContext, maxIterations = 30) {
   return messages[messages.length - 1].content;
 }
 
-/** ---------- RUN ---------- */
 try {
   const resourceContext = await loadResourceContext();
 

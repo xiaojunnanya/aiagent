@@ -57,10 +57,15 @@ async function runAgentWithTools(query, maxIterations = 30) {
     new HumanMessage(query),
   ];
 
+  // Agent loop，最多执行 30 轮，超过就停止
   for (let i = 0; i < maxIterations; i++) {
     console.log(chalk.bgGreen(`⏳ 正在等待 AI 思考...`));
     const response = await modelWithTools.invoke(messages);
     messages.push(response);
+
+    // response 是模型返回的响应，包括：
+    // - content: 模型返回的文本内容
+    // - tool_calls: 模型调用的工具列表
 
     // 检查是否有工具调用
     if (!response.tool_calls || response.tool_calls.length === 0) {

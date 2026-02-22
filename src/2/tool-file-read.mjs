@@ -23,13 +23,13 @@ const readFileTool = tool(
   async ({ filePath }) => {
     const content = await fs.readFile(filePath, "utf-8");
     console.log(
-      `  [工具调用] read_file("${filePath}") - 成功读取 ${content.length} 字节`
+      `[工具调用] read_file("${filePath}") - 成功读取 ${content.length} 字节`
     );
     return `文件内容:\n${content}`;
   },
   {
     name: "read_file", // 定义一个工具：read_file
-    description: 
+    description:
       "用此工具来读取文件内容。当用户要求读取文件、查看代码、分析文件内容时，调用此工具。输入文件路径（可以是相对路径或绝对路径）。",
     // 模型会根据这个 schema 自动生成 tool call 参数。
     schema: z.object({
@@ -56,13 +56,15 @@ const messages = [
 可用工具：
 - read_file: 读取文件内容（使用此工具来获取文件内容）
 `),
-  new HumanMessage("请读取 src/tool-file-read.mjs 文件内容并解释代码"),
+  new HumanMessage("请读取 src/2/tool-file-read.mjs 文件内容并解释代码"),
 ];
 
 // 第一次调用模型，模型会根据用户请求决定是否调用工具：用户要求读取文件 → 需要调用 read_file
 // 所以 response 不是最终回答，而是：response.tool_calls 包含了模型想要调用的工具信息。
 // invoke 解释在最下方
 let response = await modelWithTools.invoke(messages);
+
+console.log("response.tool_calls", response.tool_calls);
 
 messages.push(response);
 
@@ -105,16 +107,15 @@ while (response.tool_calls && response.tool_calls.length > 0) {
 
   // 再次调用模型，传入工具结果
   response = await modelWithTools.invoke(messages);
+  
+  console.log("response.tool_calls2", response.tool_calls);
 }
 
 console.log("\n[最终回复]");
 console.log(response.content);
-
 
 // invoke 方法解释：invoke() = 执行一次 AI 推理（输入 → 输出），返回一个 AIMessage 对象。
 // modelWithTools.invoke(messages) 是一个特殊的方法，它不仅会生成模型的回复，还会检测模型是否提出了工具调用（tool calls）。
 // 如果模型在回复中提出了工具调用，invoke 方法会将这些工具调用信息（包括工具名称和参数）作为 response.tool_calls 返回，而不是直接给出最终回答。
 // 这使得我们可以在外部捕获模型的工具调用请求，执行相应的工具，并将结果反馈给模型，形成一个交互式的 Agent loop。
 // 返回的是 AIMessage 对象，包含 content（模型回复内容）和 tool_calls（模型提出的工具调用信息）。如果模型没有提出工具调用，tool_calls 将是 undefined 或空数组。（所以判断：response.tool_calls && response.tool_calls.length > 0）
-
-
