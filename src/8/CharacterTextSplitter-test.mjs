@@ -24,8 +24,6 @@ const logTextSplitter = new CharacterTextSplitter({
 
 const splitDocuments = await logTextSplitter.splitDocuments([logDocument]);
 
-// console.log(splitDocuments);
-
 const enc = getEncoding("cl100k_base");
 splitDocuments.forEach((document) => {
   console.log(document);
