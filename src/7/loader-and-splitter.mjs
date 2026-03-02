@@ -1,5 +1,4 @@
 import "dotenv/config";
-import "cheerio";
 import { ChatOpenAI, OpenAIEmbeddings } from "@langchain/openai";
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import { MemoryVectorStore } from "@langchain/classic/vectorstores/memory";
@@ -29,8 +28,10 @@ const cheerioLoader = new CheerioWebBaseLoader(
   }
 );
 
+// 等待文档加载
 const documents = await cheerioLoader.load();
 
+// 如果断言为 false，则将一个错误消息写入控制台。如果断言是 true，没有任何反应
 console.assert(documents.length === 1);
 console.log(`Total characters: ${documents[0].pageContent.length}`);
 
@@ -51,6 +52,7 @@ const vectorStore = await MemoryVectorStore.fromDocuments(
 );
 console.log("向量存储创建完成\n");
 
+// retriever 每次检索时，最多返回 2 个 Document
 const retriever = vectorStore.asRetriever({ k: 2 });
 
 const questions = ["父亲的去世对作者的人生态度产生了怎样的根本性逆转？"];
@@ -65,6 +67,7 @@ for (const question of questions) {
   const retrievedDocs = await retriever.invoke(question);
 
   // 使用 similaritySearchWithScore 获取相似度评分
+  // 返回“最相似的前 2 个文档”，并附带相似度评分
   const scoredResults = await vectorStore.similaritySearchWithScore(
     question,
     2

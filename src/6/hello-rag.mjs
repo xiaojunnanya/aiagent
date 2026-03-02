@@ -26,7 +26,9 @@ const embeddings = new OpenAIEmbeddings({
 // 构建文档集合
 const documents = [
   new Document({
+    // pageContent：文章内容
     pageContent: `光光是一个活泼开朗的小男孩，他有一双明亮的大眼睛，总是带着灿烂的笑容。光光最喜欢的事情就是和朋友们一起玩耍，他特别擅长踢足球，每次在球场上奔跑时，就像一道阳光一样充满活力。`,
+    // 对pageContent文本的结构化信息说明，key-value形式，用户自定义
     metadata: {
       chapter: 1,
       character: "光光",
@@ -90,17 +92,15 @@ const documents = [
   }),
 ];
 
-// 构建向量数据库
-/**
- * 内部做了什么：
+/** 
+ * 构建向量数据库，内部做了什么：
  * 1. 遍历 documents
  * 2. 调用 embeddings.embedDocuments()
  * 3. 得到每个文档的向量
  * 4. 存入内存数组
+ * 
+ * 补充：MemoryVectorStore 是纯内存存储，不持久化，进程结束就消失，真实项目会用：Pinecone、Milvus、Weaviate、pgvector
  */
-
-// MemoryVectorStore 是纯内存存储，不持久化，进程结束就消失
-// 真实项目会用：Pinecone、Milvus、Weaviate、pgvector
 const vectorStore = await MemoryVectorStore.fromDocuments(
   documents,
   embeddings
