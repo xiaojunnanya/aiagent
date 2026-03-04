@@ -21,7 +21,8 @@
     "query-milvus": "node src/09/query-milvus.mjs",
     "rag": "node src/09/rag.mjs",
     "update-milvus": "node src/09/update-milvus.mjs",
-    "delete-milvus": "node src/09/delete-milvus.mjs"
+    "delete-milvus": "node src/09/delete-milvus.mjs",
+    "ebook-writer": "node src/10/ebook-writer.mjs"
   },
   "author": "",
   "license": "ISC",
@@ -37,6 +38,8 @@
     "chalk": "^5.6.2",
     "cheerio": "^1.2.0",
     "dotenv": "^17.2.4",
+    "epub2": "^3.0.2",
+    "html-to-text": "^9.0.5",
     "js-tiktoken": "^1.0.21",
     "zod": "^4.3.6"
   }
