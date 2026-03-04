@@ -136,7 +136,7 @@ async function main() {
     await client.connectPromise;
     console.log("✓ 已连接\n");
 
-    await answerDiaryQuestion("我最近做了什么让我感到快乐的事情？", 2);
+    await answerDiaryQuestion("几个人去爬山了", 2);
   } catch (error) {
     console.error("错误:", error.message);
   }

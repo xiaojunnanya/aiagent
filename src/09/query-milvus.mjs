@@ -35,14 +35,15 @@ async function main() {
     console.log(`Query: "${query}"\n`);
 
     const queryVector = await getEmbedding(query);
+    // 搜索
     const searchResult = await client.search({
-      collection_name: COLLECTION_NAME,
-      vector: queryVector,
-      limit: 2,
-      metric_type: MetricType.COSINE,
-      output_fields: ["id", "content", "date", "mood", "tags"],
+      collection_name: COLLECTION_NAME, // 集合名
+      vector: queryVector, // 向量
+      limit: 2, // 取前 2 条最相似的
+      metric_type: MetricType.COSINE, // 相似度计算方式
+      output_fields: ["id", "content", "date", "mood", "tags"], // 返回哪些字段
     });
-
+    
     console.log(`Found ${searchResult.results.length} results:\n`);
     searchResult.results.forEach((item, index) => {
       console.log(`${index + 1}. [Score: ${item.score.toFixed(4)}]`);
