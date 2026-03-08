@@ -22,7 +22,16 @@
     "rag": "node src/09/rag.mjs",
     "update-milvus": "node src/09/update-milvus.mjs",
     "delete-milvus": "node src/09/delete-milvus.mjs",
-    "ebook-writer": "node src/10/ebook-writer.mjs"
+    "ebook-writer": "node src/10/ebook-writer.mjs",
+    "history-test": "node src/11/history-test.mjs",
+    "history-test2": "node src/11/history-test2.mjs",
+    "history-test3": "node src/11/history-test3.mjs",
+    "truncation-memory": "node src/11/truncation-memory.mjs",
+    "pagination-memory": "node src/11/pagination-memory.mjs",
+    "summarization-memory": "node src/11/summarization-memory.mjs",
+    "summarization-memory2": "node src/11/summarization-memory2.mjs",
+    "insert-conversations": "node src/11/insert-conversations.mjs",
+    "retrieval-memory": "node src/11/retrieval-memory.mjs"
   },
   "author": "",
   "license": "ISC",
