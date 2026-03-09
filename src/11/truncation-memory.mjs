@@ -55,6 +55,7 @@ function countTokens(messages, encoder) {
       typeof msg.content === "string"
         ? msg.content
         : JSON.stringify(msg.content);
+        // encoder 相等于 etEncoding("cl100k_base");
     total += encoder.encode(content).length;
   }
   return total;
@@ -92,14 +93,14 @@ async function tokenCountTruncation() {
 
   let allMessages = await history.getMessages();
 
-  // 使用 trimMessages API：使用 js-tiktoken 计算 token 数量
+  // trimMessages 是 LangChain 的工具，可以灵活截断消息数组
   const trimmedMessages = await trimMessages(allMessages, {
     maxTokens: maxTokens,
     tokenCounter: async (msgs) => countTokens(msgs, enc),
     strategy: "last", // 保留最近的消息
   });
 
-  // 计算实际 token 数用于显示
+  // 计算实际 token 数用于显示，trimmedMessages就是按照maxTokens计算后的消息数据
   const totalTokens = countTokens(trimmedMessages, enc);
 
   console.log(`总 token 数: ${totalTokens}/${maxTokens}`);

@@ -20,6 +20,7 @@ const model = new ChatOpenAI({
 async function fileHistoryDemo() {
   // 指定存储文件的路径
   const filePath = path.join(process.cwd(), "chat_history.json");
+  // 会话ID，每个用户一个会话
   const sessionId = "user_session_001";
 
   // 系统提示词
@@ -28,6 +29,7 @@ async function fileHistoryDemo() {
   );
 
   console.log("[第一轮对话]");
+  // 创建文件系统对话历史记录器，存在文件里，InMemoryChatMessageHistory是存在内存里
   const history = new FileSystemChatMessageHistory({
     filePath: filePath,
     sessionId: sessionId,

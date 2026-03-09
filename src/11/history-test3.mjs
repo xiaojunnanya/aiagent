@@ -32,6 +32,7 @@ async function fileHistoryDemo() {
     sessionId: sessionId,
   });
 
+  // 从文件中恢复历史消息，添加是 addMessage
   const restoredMessages = await restoredHistory.getMessages();
   console.log(`从文件恢复了 ${restoredMessages.length} 条历史消息：`);
   restoredMessages.forEach((msg, index) => {
@@ -41,7 +42,6 @@ async function fileHistoryDemo() {
       `  ${index + 1}. [${prefix}]: ${msg.content.substring(0, 50)}...`
     );
   });
-  console.log();
 
   console.log("[第三轮对话]");
   const userMessage3 = new HumanMessage("需要哪些食材？");

@@ -1,1 +1,188 @@
-{"":{"user_session_001":{"messages":[{"type":"human","data":{"content":"红烧肉怎么做","additional_kwargs":{},"response_metadata":{}}},{"type":"ai","data":{"id":"chatcmpl-001dc015-d03d-98a8-a488-577976e4817e","content":"红烧肉是一道非常受欢迎的传统中式菜肴，以其色泽红亮、肥而不腻而著称。下面是制作红烧肉的详细步骤：\n\n### 材料：\n- 五花肉500克\n- 生姜几片\n- 大葱一段（切段）\n- 料酒适量\n- 老抽、生抽各适量\n- 糖适量（最好是冰糖或白糖）\n- 清水适量\n\n### 步骤：\n\n1. **准备材料**：将五花肉切成约2厘米见方的小块。生姜切片，大葱切段备用。\n\n2. **焯水**：锅中加入足够的水，放入五花肉块，大火煮开后撇去浮沫，捞出沥干水分。\n\n3. **炒糖色**：锅中放少量油，小火慢慢加热，待油温升高时，放入适量的糖（最好是冰糖），用勺子不停搅拌，直到糖完全融化并变成深红色的糖浆。\n\n4. **煎炸肉块**：将焯好水的五花肉倒入锅中，快速翻炒均匀，让每一块肉都裹上糖色。注意不要炒糊了。\n\n5. **调味**：在肉块表面均匀地刷上一层老抽和生抽，然后加入足够的热水（没过肉块即可）。大火烧开后转小火慢炖。\n\n6. **炖煮**：盖上锅盖，小火炖煮大约1小时至1个半小时，期间可以适当翻动几次，防止粘底。如果觉得肉质不够软烂，可以再加点水继续炖煮。\n\n7. **收汁**：等肉质变得非常软烂，汤汁浓稠时，开大火收汁，让肉块表面更加光亮。根据个人口味可以适当加盐调味。\n\n8. **装盘**：最后将红烧肉盛出装盘，撒上一些葱花点缀即可。\n\n### 小贴士：\n- 在炒糖色的时候一定要耐心，温度要掌握好，避免糖色炒糊。\n- 炖煮过程中保持小火，使肉质更加入味且不易碎。\n- 如果喜欢更浓郁的风味，可以在炖煮的过程中加入八角、桂皮等香料。\n\n按照以上步骤，你就能做出一道美味的红烧肉了。祝你烹饪愉快！","additional_kwargs":{},"response_metadata":{"tokenUsage":{"promptTokens":32,"completionTokens":510,"totalTokens":542},"finish_reason":"stop","model_provider":"openai","model_name":"qwen-coder-turbo"},"type":"ai","tool_calls":[],"invalid_tool_calls":[],"usage_metadata":{"output_tokens":510,"input_tokens":32,"total_tokens":542,"input_token_details":{},"output_token_details":{}}}},{"type":"human","data":{"content":"好吃吗？","additional_kwargs":{},"response_metadata":{}}},{"type":"ai","data":{"id":"chatcmpl-bc9e7231-fb56-9ad0-a830-3434c577b72d","content":"红烧肉是一道非常经典且受欢迎的传统中式菜肴，它的味道鲜美、色泽红亮，深受大家的喜爱。如果你按照上述步骤操作，相信你的红烧肉也会非常美味。希望你能享受烹饪的乐趣，并与家人朋友分享这份美味！如果有任何问题或者需要进一步的帮助，请随时告诉我。","additional_kwargs":{},"response_metadata":{"tokenUsage":{"promptTokens":555,"completionTokens":65,"totalTokens":620},"finish_reason":"stop","model_provider":"openai","model_name":"qwen-coder-turbo"},"type":"ai","tool_calls":[],"invalid_tool_calls":[],"usage_metadata":{"output_tokens":65,"input_tokens":555,"total_tokens":620,"input_token_details":{},"output_token_details":{}}}},{"type":"human","data":{"content":"红烧肉怎么做","additional_kwargs":{},"response_metadata":{}}},{"type":"ai","data":{"id":"chatcmpl-665aa9c4-fb35-934d-951e-c2f5d8333615","content":"当然，我可以为你提供详细的红烧肉做法。以下是制作红烧肉的步骤：\n\n### 所需食材：\n- 五花肉500克\n- 生姜几片\n- 大葱一段（切段）\n- 料酒适量\n- 老抽、生抽各适量\n- 白糖适量（最好是冰糖）\n- 清水适量\n\n### 制作步骤：\n\n1. **准备工作**：\n   - 将五花肉切成约2厘米见方的小块。\n   - 生姜切片，大葱切段备用。\n\n2. **焯水**：\n   - 锅中加入足够的水，放入五花肉块，大火煮开后撇去浮沫，捞出沥干水分。\n\n3. **炒糖色**：\n   - 锅中放少量油，小火慢慢加热，待油温升高时，放入适量的糖（最好是冰糖），用勺子不停搅拌，直到糖完全融化并变成深红色的糖浆。\n\n4. **煎炸肉块**：\n   - 将焯好水的五花肉倒入锅中，快速翻炒均匀，让每一块肉都裹上糖色。注意不要炒糊了。\n\n5. **调味**：\n   - 在肉块表面均匀地刷上一层老抽和生抽，然后加入足够的热水（没过肉块即可）。大火烧开后转小火慢炖。\n\n6. **炖煮**：\n   - 盖上锅盖，小火炖煮大约1小时至1个半小时，期间可以适当翻动几次，防止粘底。如果觉得肉质不够软烂，可以再加点水继续炖煮。\n\n7. **收汁**：\n   - 等肉质变得非常软烂，汤汁浓稠时，开大火收汁，让肉块表面更加光亮。根据个人口味可以适当加盐调味。\n\n8. **装盘**：\n   - 最后将红烧肉盛出装盘，撒上一些葱花点缀即可。\n\n### 小贴士：\n- 在炒糖色的时候一定要耐心，温度要掌握好，避免糖色炒糊。\n- 炖煮过程中保持小火，使肉质更加入味且不易碎。\n- 如果喜欢更浓郁的风味，可以在炖煮的过程中加入八角、桂皮等香料。\n\n按照以上步骤，你就能做出一道美味的红烧肉了。祝你烹饪愉快！如果有任何问题或者需要进一步的帮助，请随时告诉我。","additional_kwargs":{},"response_metadata":{"tokenUsage":{"promptTokens":634,"completionTokens":534,"totalTokens":1168},"finish_reason":"stop","model_provider":"openai","model_name":"qwen-coder-turbo"},"type":"ai","tool_calls":[],"invalid_tool_calls":[],"usage_metadata":{"output_tokens":534,"input_tokens":634,"total_tokens":1168,"input_token_details":{},"output_token_details":{}}}},{"type":"human","data":{"content":"好吃吗？","additional_kwargs":{},"response_metadata":{}}},{"type":"ai","data":{"id":"chatcmpl-a829dcae-21aa-9203-acbe-a22a91ea1b64","content":"红烧肉是一道非常经典且受欢迎的传统中式菜肴，它的味道鲜美、色泽红亮，深受大家的喜爱。如果你按照上述步骤操作，相信你的红烧肉也会非常美味。希望你能享受烹饪的乐趣，并与家人朋友分享这份美味！如果有任何问题或者需要进一步的帮助，请随时告诉我。","additional_kwargs":{},"response_metadata":{"tokenUsage":{"promptTokens":1181,"completionTokens":65,"totalTokens":1246},"finish_reason":"stop","model_provider":"openai","model_name":"qwen-coder-turbo"},"type":"ai","tool_calls":[],"invalid_tool_calls":[],"usage_metadata":{"output_tokens":65,"input_tokens":1181,"total_tokens":1246,"input_token_details":{},"output_token_details":{}}}},{"type":"human","data":{"content":"需要哪些食材？","additional_kwargs":{},"response_metadata":{}}},{"type":"ai","data":{"id":"chatcmpl-5d193f9b-c60e-92b9-bb48-7c1e67d33353","content":"红烧肉的主要食材包括：\n\n- 五花肉500克\n- 生姜几片\n- 大葱一段（切段）\n- 料酒适量\n- 老抽、生抽各适量\n- 白糖适量（最好是冰糖）\n- 清水适量\n\n这些食材可以让你制作出口味鲜美、色泽红亮的红烧肉。如果你有任何其他问题或需要进一步的帮助，请随时告诉我！","additional_kwargs":{},"response_metadata":{"tokenUsage":{"promptTokens":1262,"completionTokens":95,"totalTokens":1357},"finish_reason":"stop","model_provider":"openai","model_name":"qwen-coder-turbo"},"type":"ai","tool_calls":[],"invalid_tool_calls":[],"usage_metadata":{"output_tokens":95,"input_tokens":1262,"total_tokens":1357,"input_token_details":{},"output_token_details":{}}}}]}}}
+{
+  "": {
+    "user_session_001": {
+      "messages": [
+        {
+          "type": "human",
+          "data": {
+            "content": "红烧肉怎么做",
+            "additional_kwargs": {},
+            "response_metadata": {}
+          }
+        },
+        {
+          "type": "ai",
+          "data": {
+            "id": "chatcmpl-001dc015-d03d-98a8-a488-577976e4817e",
+            "content": "红烧肉是一道非常受欢迎的传统中式菜肴，以其色泽红亮、肥而不腻而著称。下面是制作红烧肉的详细步骤：\n\n### 材料：\n- 五花肉500克\n- 生姜几片\n- 大葱一段（切段）\n- 料酒适量\n- 老抽、生抽各适量\n- 糖适量（最好是冰糖或白糖）\n- 清水适量\n\n### 步骤：\n\n1. **准备材料**：将五花肉切成约2厘米见方的小块。生姜切片，大葱切段备用。\n\n2. **焯水**：锅中加入足够的水，放入五花肉块，大火煮开后撇去浮沫，捞出沥干水分。\n\n3. **炒糖色**：锅中放少量油，小火慢慢加热，待油温升高时，放入适量的糖（最好是冰糖），用勺子不停搅拌，直到糖完全融化并变成深红色的糖浆。\n\n4. **煎炸肉块**：将焯好水的五花肉倒入锅中，快速翻炒均匀，让每一块肉都裹上糖色。注意不要炒糊了。\n\n5. **调味**：在肉块表面均匀地刷上一层老抽和生抽，然后加入足够的热水（没过肉块即可）。大火烧开后转小火慢炖。\n\n6. **炖煮**：盖上锅盖，小火炖煮大约1小时至1个半小时，期间可以适当翻动几次，防止粘底。如果觉得肉质不够软烂，可以再加点水继续炖煮。\n\n7. **收汁**：等肉质变得非常软烂，汤汁浓稠时，开大火收汁，让肉块表面更加光亮。根据个人口味可以适当加盐调味。\n\n8. **装盘**：最后将红烧肉盛出装盘，撒上一些葱花点缀即可。\n\n### 小贴士：\n- 在炒糖色的时候一定要耐心，温度要掌握好，避免糖色炒糊。\n- 炖煮过程中保持小火，使肉质更加入味且不易碎。\n- 如果喜欢更浓郁的风味，可以在炖煮的过程中加入八角、桂皮等香料。\n\n按照以上步骤，你就能做出一道美味的红烧肉了。祝你烹饪愉快！",
+            "additional_kwargs": {},
+            "response_metadata": {
+              "tokenUsage": {
+                "promptTokens": 32,
+                "completionTokens": 510,
+                "totalTokens": 542
+              },
+              "finish_reason": "stop",
+              "model_provider": "openai",
+              "model_name": "qwen-coder-turbo"
+            },
+            "type": "ai",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "usage_metadata": {
+              "output_tokens": 510,
+              "input_tokens": 32,
+              "total_tokens": 542,
+              "input_token_details": {},
+              "output_token_details": {}
+            }
+          }
+        },
+        {
+          "type": "human",
+          "data": {
+            "content": "好吃吗？",
+            "additional_kwargs": {},
+            "response_metadata": {}
+          }
+        },
+        {
+          "type": "ai",
+          "data": {
+            "id": "chatcmpl-bc9e7231-fb56-9ad0-a830-3434c577b72d",
+            "content": "红烧肉是一道非常经典且受欢迎的传统中式菜肴，它的味道鲜美、色泽红亮，深受大家的喜爱。如果你按照上述步骤操作，相信你的红烧肉也会非常美味。希望你能享受烹饪的乐趣，并与家人朋友分享这份美味！如果有任何问题或者需要进一步的帮助，请随时告诉我。",
+            "additional_kwargs": {},
+            "response_metadata": {
+              "tokenUsage": {
+                "promptTokens": 555,
+                "completionTokens": 65,
+                "totalTokens": 620
+              },
+              "finish_reason": "stop",
+              "model_provider": "openai",
+              "model_name": "qwen-coder-turbo"
+            },
+            "type": "ai",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "usage_metadata": {
+              "output_tokens": 65,
+              "input_tokens": 555,
+              "total_tokens": 620,
+              "input_token_details": {},
+              "output_token_details": {}
+            }
+          }
+        },
+        {
+          "type": "human",
+          "data": {
+            "content": "红烧肉怎么做",
+            "additional_kwargs": {},
+            "response_metadata": {}
+          }
+        },
+        {
+          "type": "ai",
+          "data": {
+            "id": "chatcmpl-665aa9c4-fb35-934d-951e-c2f5d8333615",
+            "content": "当然，我可以为你提供详细的红烧肉做法。以下是制作红烧肉的步骤：\n\n### 所需食材：\n- 五花肉500克\n- 生姜几片\n- 大葱一段（切段）\n- 料酒适量\n- 老抽、生抽各适量\n- 白糖适量（最好是冰糖）\n- 清水适量\n\n### 制作步骤：\n\n1. **准备工作**：\n   - 将五花肉切成约2厘米见方的小块。\n   - 生姜切片，大葱切段备用。\n\n2. **焯水**：\n   - 锅中加入足够的水，放入五花肉块，大火煮开后撇去浮沫，捞出沥干水分。\n\n3. **炒糖色**：\n   - 锅中放少量油，小火慢慢加热，待油温升高时，放入适量的糖（最好是冰糖），用勺子不停搅拌，直到糖完全融化并变成深红色的糖浆。\n\n4. **煎炸肉块**：\n   - 将焯好水的五花肉倒入锅中，快速翻炒均匀，让每一块肉都裹上糖色。注意不要炒糊了。\n\n5. **调味**：\n   - 在肉块表面均匀地刷上一层老抽和生抽，然后加入足够的热水（没过肉块即可）。大火烧开后转小火慢炖。\n\n6. **炖煮**：\n   - 盖上锅盖，小火炖煮大约1小时至1个半小时，期间可以适当翻动几次，防止粘底。如果觉得肉质不够软烂，可以再加点水继续炖煮。\n\n7. **收汁**：\n   - 等肉质变得非常软烂，汤汁浓稠时，开大火收汁，让肉块表面更加光亮。根据个人口味可以适当加盐调味。\n\n8. **装盘**：\n   - 最后将红烧肉盛出装盘，撒上一些葱花点缀即可。\n\n### 小贴士：\n- 在炒糖色的时候一定要耐心，温度要掌握好，避免糖色炒糊。\n- 炖煮过程中保持小火，使肉质更加入味且不易碎。\n- 如果喜欢更浓郁的风味，可以在炖煮的过程中加入八角、桂皮等香料。\n\n按照以上步骤，你就能做出一道美味的红烧肉了。祝你烹饪愉快！如果有任何问题或者需要进一步的帮助，请随时告诉我。",
+            "additional_kwargs": {},
+            "response_metadata": {
+              "tokenUsage": {
+                "promptTokens": 634,
+                "completionTokens": 534,
+                "totalTokens": 1168
+              },
+              "finish_reason": "stop",
+              "model_provider": "openai",
+              "model_name": "qwen-coder-turbo"
+            },
+            "type": "ai",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "usage_metadata": {
+              "output_tokens": 534,
+              "input_tokens": 634,
+              "total_tokens": 1168,
+              "input_token_details": {},
+              "output_token_details": {}
+            }
+          }
+        },
+        {
+          "type": "human",
+          "data": {
+            "content": "好吃吗？",
+            "additional_kwargs": {},
+            "response_metadata": {}
+          }
+        },
+        {
+          "type": "ai",
+          "data": {
+            "id": "chatcmpl-a829dcae-21aa-9203-acbe-a22a91ea1b64",
+            "content": "红烧肉是一道非常经典且受欢迎的传统中式菜肴，它的味道鲜美、色泽红亮，深受大家的喜爱。如果你按照上述步骤操作，相信你的红烧肉也会非常美味。希望你能享受烹饪的乐趣，并与家人朋友分享这份美味！如果有任何问题或者需要进一步的帮助，请随时告诉我。",
+            "additional_kwargs": {},
+            "response_metadata": {
+              "tokenUsage": {
+                "promptTokens": 1181,
+                "completionTokens": 65,
+                "totalTokens": 1246
+              },
+              "finish_reason": "stop",
+              "model_provider": "openai",
+              "model_name": "qwen-coder-turbo"
+            },
+            "type": "ai",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "usage_metadata": {
+              "output_tokens": 65,
+              "input_tokens": 1181,
+              "total_tokens": 1246,
+              "input_token_details": {},
+              "output_token_details": {}
+            }
+          }
+        },
+        {
+          "type": "human",
+          "data": {
+            "content": "需要哪些食材？",
+            "additional_kwargs": {},
+            "response_metadata": {}
+          }
+        },
+        {
+          "type": "ai",
+          "data": {
+            "id": "chatcmpl-5d193f9b-c60e-92b9-bb48-7c1e67d33353",
+            "content": "红烧肉的主要食材包括：\n\n- 五花肉500克\n- 生姜几片\n- 大葱一段（切段）\n- 料酒适量\n- 老抽、生抽各适量\n- 白糖适量（最好是冰糖）\n- 清水适量\n\n这些食材可以让你制作出口味鲜美、色泽红亮的红烧肉。如果你有任何其他问题或需要进一步的帮助，请随时告诉我！",
+            "additional_kwargs": {},
+            "response_metadata": {
+              "tokenUsage": {
+                "promptTokens": 1262,
+                "completionTokens": 95,
+                "totalTokens": 1357
+              },
+              "finish_reason": "stop",
+              "model_provider": "openai",
+              "model_name": "qwen-coder-turbo"
+            },
+            "type": "ai",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "usage_metadata": {
+              "output_tokens": 95,
+              "input_tokens": 1262,
+              "total_tokens": 1357,
+              "input_token_details": {},
+              "output_token_details": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

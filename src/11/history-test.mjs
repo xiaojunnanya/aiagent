@@ -12,9 +12,12 @@ const model = new ChatOpenAI({
   },
 });
 
+// 演示 LangChain 如何用内存保存对话历史，实现多轮对话
 async function inMemoryDemo() {
+  // 创建一个内存中的对话历史记录器，即把对话历史存在内存里
   const history = new InMemoryChatMessageHistory();
 
+  // 系统提示词
   const systemMessage = new SystemMessage(
     "你是一个友好、幽默的做菜助手，喜欢分享美食和烹饪技巧。"
   );
@@ -56,4 +59,5 @@ async function inMemoryDemo() {
   });
 }
 
+// 运行，如果报错打印
 inMemoryDemo().catch(console.error);

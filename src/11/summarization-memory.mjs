@@ -19,6 +19,7 @@ const model = new ChatOpenAI({
 
 // ========== 总结策略演示 ==========
 async function summarizationMemoryDemo() {
+  // 内存中存储历史消息
   const history = new InMemoryChatMessageHistory();
   const maxMessages = 6; // 超过 6 条消息时触发总结
 
