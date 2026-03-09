@@ -27,6 +27,7 @@ try {
   console.log("📤 模型原始响应:\n");
   console.log(response.content);
 
+  // 解析 JSON 格式
   const result = await parser.parse(response.content);
 
   console.log("✅ JsonOutputParser 自动解析的结果:\n");

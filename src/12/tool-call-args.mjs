@@ -30,6 +30,7 @@ const modelWithTool = model.bindTools([
 // 调用模型
 const response = await modelWithTool.invoke("介绍一下爱因斯坦");
 
+console.log("response:", response);
 console.log("response.tool_calls:", response.tool_calls);
 // 获取结构化结果
 const result = response.tool_calls[0].args;

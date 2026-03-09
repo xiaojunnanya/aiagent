@@ -10,7 +10,7 @@ const model = new ChatOpenAI({
   },
 });
 
-const prompt = `详细介绍莫扎特的信息。`;
+const prompt = `详细介绍现在美国和伊朗的局势`;
 
 console.log("🌊 普通流式输出演示（无结构化）\n");
 
