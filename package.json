@@ -43,7 +43,8 @@
     "stream-structured-partial": "node src/12/stream-structured-partial.mjs",
     "stream-tool-calls-raw": "node src/12/stream-tool-calls-raw.mjs",
     "stream-tool-calls-parser": "node src/12/stream-tool-calls-parser.mjs",
-    "xml-output-parser": "node src/12/xml-output-parser.mjs"
+    "xml-output-parser": "node src/12/xml-output-parser.mjs",
+    "new-mini-cursor": "node src/13/mini-cursor.mjs"
   },
   "author": "",
   "license": "ISC",
