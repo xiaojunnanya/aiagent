@@ -6,6 +6,7 @@ import {
   ToolMessage,
 } from "@langchain/core/messages";
 import { InMemoryChatMessageHistory } from "@langchain/core/chat_history";
+// 解析 streaming tool call
 import { JsonOutputToolsParser } from "@langchain/core/output_parsers/openai_tools";
 import {
   executeCommandTool,
@@ -36,8 +37,10 @@ const modelWithTools = model.bindTools(tools);
 
 // Agent 执行函数
 async function runAgentWithTools(query, maxIterations = 30) {
+  // 存在内存
   const history = new InMemoryChatMessageHistory();
 
+  // 初始系统提示，介绍工具和规则
   await history.addMessage(
     new SystemMessage(`你是一个项目管理助手，使用工具完成任务。
 
@@ -57,9 +60,10 @@ async function runAgentWithTools(query, maxIterations = 30) {
 
 重要规则 - write_file：
 - 当写入 React 组件文件（如 App.tsx）时，如果存在对应的 CSS 文件（如 App.css），在其他 import 语句后加上这个 css 的导入
-`)
+`),
   );
 
+  // 加入用户的问题
   await history.addMessage(new HumanMessage(query));
 
   for (let i = 0; i < maxIterations; i++) {
@@ -70,13 +74,13 @@ async function runAgentWithTools(query, maxIterations = 30) {
 
     const rawStream = await modelWithTools.stream(messages);
 
-    // 准备一个空的容器来拼接完整的 AIMessage
+    // stream 返回的不是完整消息，而是 很多 chunk：所以需要把它们 拼接成完整 AIMessage。其实就是一个流式消息缓冲区
     let fullAIMessage = null;
 
-    // 准备一个 tool_call_chunks 的 JSON 增量解析器
+    // 作用：解析 streaming tool call，解释一下就懂了，最下方 :::info 的解释
     const toolParser = new JsonOutputToolsParser();
 
-    // 记录每个工具调用已打印的长度（用 id 或 filePath 作为 key）
+    // 记录已经打印了多少内容，避免重复打印（用 id 或 filePath 作为 key），下方 :::info 也有解释
     const printedLengths = new Map();
 
     console.log(chalk.bgBlue(`\n🚀 Agent 开始思考并生成流...\n`));
@@ -85,6 +89,7 @@ async function runAgentWithTools(query, maxIterations = 30) {
       // 这里的 chunk 是 AIMessageChunk，把它拼接起来
       fullAIMessage = fullAIMessage ? fullAIMessage.concat(chunk) : chunk;
 
+      // parsedTools 是解析出来的工具调用列表，如果解析失败说明 JSON 还不完整，继续累积 chunk 直到解析成功
       let parsedTools = null;
       try {
         parsedTools = await toolParser.parseResult([
@@ -106,8 +111,8 @@ async function runAgentWithTools(query, maxIterations = 30) {
               printedLengths.set(toolCallId, 0);
               console.log(
                 chalk.bgBlue(
-                  `\n[工具调用] write_file("${toolCall.args.filePath}") - 开始写入（流式预览）\n`
-                )
+                  `\n[工具调用] write_file("${toolCall.args.filePath}") - 开始写入（流式预览）\n`,
+                ),
               );
             }
 
@@ -124,7 +129,7 @@ async function runAgentWithTools(query, maxIterations = 30) {
           process.stdout.write(
             typeof chunk.content === "string"
               ? chunk.content
-              : JSON.stringify(chunk.content)
+              : JSON.stringify(chunk.content),
           );
         }
       }
@@ -149,13 +154,14 @@ async function runAgentWithTools(query, maxIterations = 30) {
           new ToolMessage({
             content: toolResult,
             tool_call_id: toolCall.id,
-          })
+          }),
         );
       }
     }
   }
 
   const finalMessages = await history.getMessages();
+  // 返回最后一条消息的内容作为最终结果
   return finalMessages[finalMessages.length - 1].content;
 }
 
