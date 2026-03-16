@@ -55,7 +55,14 @@
     "messages-placeholder": "node src/14/messages-placeholder.mjs",
     "fewshot-prompt-template": "node src/14/fewshot-prompt-template.mjs",
     "example-selector1": "node src/14/example-selector1.mjs",
-    "fewshot-chat-prompt-template": "node src/14/fewshot-chat-prompt-template.mjs"
+    "fewshot-chat-prompt-template": "node src/14/fewshot-chat-prompt-template.mjs",
+    "runnable-lambda": "node src/15/RunnableLambda.mjs",
+    "runnable-map": "node src/15/RunnableMap.mjs",
+    "runnable-branch": "node src/15/RunnableBranch.mjs",
+    "runnable-passthrough": "node src/15/RunnablePassthrough.mjs",
+    "runnable-each": "node src/15/RunnableEach.mjs",
+    "runnable-pick": "node src/15/RunablePick.mjs",
+    "runnable-with-message-history": "node src/15/RunnableWithMessageHistory.mjs"
   },
   "author": "",
   "license": "ISC",
