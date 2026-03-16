@@ -62,7 +62,10 @@
     "runnable-passthrough": "node src/15/RunnablePassthrough.mjs",
     "runnable-each": "node src/15/RunnableEach.mjs",
     "runnable-pick": "node src/15/RunablePick.mjs",
-    "runnable-with-message-history": "node src/15/RunnableWithMessageHistory.mjs"
+    "runnable-with-message-history": "node src/15/RunnableWithMessageHistory.mjs",
+    "runnable-with-retry": "node src/16/RunnableWithRetry.mjs",
+    "runnable-with-config": "node src/16/RunnableWithConfig.mjs",
+    "runnable-with-callbacks": "node src/16/RunnableWithCallbacks.mjs"
   },
   "author": "",
   "license": "ISC",
