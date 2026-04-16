@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tool-file-read": "node src/02/tool-file-read.mjs",
+    "node-exec": "node src/03/node-exec.mjs",
+    "langchain-mcp-test": "node src/04/langchain-mcp-test.mjs"
   },
   "author": "",
   "license": "ISC",
