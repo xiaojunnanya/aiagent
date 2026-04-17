@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "tool-file-read": "node src/02/tool-file-read.mjs",
     "node-exec": "node src/03/node-exec.mjs",
-    "langchain-mcp-test": "node src/04/langchain-mcp-test.mjs"
+    "langchain-mcp-test": "node src/04/langchain-mcp-test.mjs",
+    "rag": "node src/06/rag.mjs"
   },
   "author": "",
   "license": "ISC",
