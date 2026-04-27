@@ -8,7 +8,9 @@
     "tool-file-read": "node src/02/tool-file-read.mjs",
     "node-exec": "node src/03/node-exec.mjs",
     "langchain-mcp-test": "node src/04/langchain-mcp-test.mjs",
-    "rag": "node src/06/rag.mjs"
+    "rag": "node src/06/rag.mjs",
+    "loader-and-splitter": "node src/07/loader-and-splitter.mjs",
+    "truncation-memory": "node src/11/truncation-memory.mjs"
   },
   "author": "",
   "license": "ISC",
