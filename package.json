@@ -10,7 +10,10 @@
     "langchain-mcp-test": "node src/04/langchain-mcp-test.mjs",
     "rag": "node src/06/rag.mjs",
     "loader-and-splitter": "node src/07/loader-and-splitter.mjs",
-    "truncation-memory": "node src/11/truncation-memory.mjs"
+    "truncation-memory": "node src/11/truncation-memory.mjs",
+    "output": "node src/12/output.mjs",
+    "stream": "node src/12/stream.mjs",
+    "index13": "node src/13/index.mjs"
   },
   "author": "",
   "license": "ISC",
