@@ -13,7 +13,8 @@
     "truncation-memory": "node src/11/truncation-memory.mjs",
     "output": "node src/12/output.mjs",
     "stream": "node src/12/stream.mjs",
-    "index13": "node src/13/index.mjs"
+    "index13": "node src/13/index.mjs",
+    "fewshot-prompt-template": "node src/14/fewshot-prompt-template.mjs"
   },
   "author": "",
   "license": "ISC",
