@@ -65,7 +65,10 @@
     "runnable-with-message-history": "node src/15/RunnableWithMessageHistory.mjs",
     "runnable-with-retry": "node src/16/RunnableWithRetry.mjs",
     "runnable-with-config": "node src/16/RunnableWithConfig.mjs",
-    "runnable-with-callbacks": "node src/16/RunnableWithCallbacks.mjs"
+    "runnable-with-callbacks": "node src/16/RunnableWithCallbacks.mjs",
+    "tts-test": "node src/21/tts-test.mjs",
+    "stream-tts-test": "node src/21/streaming-tts-test.mjs",
+    "asr-test": "node src/21/asr-test.mjs"
   },
   "author": "",
   "license": "ISC",
@@ -84,6 +87,9 @@
     "epub2": "^3.0.2",
     "html-to-text": "^9.0.5",
     "js-tiktoken": "^1.0.21",
+    "tencentcloud-sdk-nodejs": "^4.1.226",
+    "tencentcloud-sdk-nodejs-tts": "^4.1.203",
+    "ws": "^8.20.0",
     "zod": "^4.3.6"
   }
 }
