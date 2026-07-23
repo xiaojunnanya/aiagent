@@ -1,9 +1,12 @@
 import "dotenv/config";
 import tencentcloud from "tencentcloud-sdk-nodejs-tts";
 import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const secretId = process.env.SECRET_ID;
 const secretKey = process.env.SECRET_KEY;
+const currentDir = path.dirname(fileURLToPath(import.meta.url));
 
 const TtsClient = tencentcloud.tts.v20190823.Client;
 
@@ -31,7 +34,8 @@ client.TextToVoice(params).then(
   (data) => {
     // 返回的 Audio 字段是 Base64 编码的音频数据
     const audioBuffer = Buffer.from(data.Audio, "base64");
-    const outputPath = "./output.mp3";
+    // Keep generated audio alongside this script, regardless of where Node is run.
+    const outputPath = path.join(currentDir, "output.mp3");
 
     fs.writeFile(outputPath, audioBuffer, (err) => {
       if (err) {

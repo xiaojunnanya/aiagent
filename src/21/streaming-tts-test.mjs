@@ -2,13 +2,16 @@ import "dotenv/config";
 import WebSocket from "ws";
 import crypto from "node:crypto";
 import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const SECRET_ID = process.env.SECRET_ID;
 const SECRET_KEY = process.env.SECRET_KEY;
 const APP_ID = process.env.APP_ID;
+const currentDir = path.dirname(fileURLToPath(import.meta.url));
 
 const VOICE_TYPE = 101001;
-const OUTPUT_FILE = "output3.mp3";
+const OUTPUT_FILE = path.join(currentDir, "output3.mp3");
 const TEXT_INTERVAL_MS = 3000;
 const TEXTS = [
   "傍晚我还在为晚霞开心，",
