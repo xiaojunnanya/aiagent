@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { Annotation, END, START, StateGraph } from "@langchain/langgraph";
 
 // 在图状态中保存用户问题、选中的路由和最终答案。

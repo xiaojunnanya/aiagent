@@ -98,6 +98,7 @@
     "html-to-text": "^9.0.5",
     "js-tiktoken": "^1.0.21",
     "langchain": "^1.5.4",
+    "mysql2": "^3.23.2",
     "tencentcloud-sdk-nodejs": "^4.1.226",
     "tencentcloud-sdk-nodejs-tts": "^4.1.203",
     "ws": "^8.20.0",

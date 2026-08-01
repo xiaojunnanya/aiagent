@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 import { Annotation, END, START, StateGraph } from "@langchain/langgraph";
 
 // 定义图中所有节点共享的状态字段。
